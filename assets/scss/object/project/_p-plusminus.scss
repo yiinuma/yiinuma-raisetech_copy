@@ -1,0 +1,43 @@
+/*-------plusminusここから-------*/
+@include mq-down(lg) {
+  .p-header__menu--parent {
+    span {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 45px;
+      width: 50px;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: #121212;
+        z-index: 10;
+      }
+      &::before {
+        top: 22px;
+        right: 13px;
+        width: 24px;
+        height: 2px;
+      }
+      &::after {
+        top: 11px;
+        right: 24px;
+        width: 2px;
+        height: 24px;
+      }
+    }
+    :hover span {
+      background-color: #f7f7f7;
+      &::after {
+        width: 0;
+      }
+    }
+    :nth-child(3) a::after,
+    :nth-child(3) a::before {
+      width: 0;
+    }
+  }
+}
+/*-------plusminusここまで-------*/

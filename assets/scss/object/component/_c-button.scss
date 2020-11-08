@@ -1,0 +1,14 @@
+.c-button {
+  display: inline-block;
+  a {
+    background-color: $color-green4;
+    border: solid 1px $color-green4;
+    border-radius: 4px;
+    padding: 24px 37px;
+    color: $color-white;
+    line-height: 1;
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: block;
+  }
+}

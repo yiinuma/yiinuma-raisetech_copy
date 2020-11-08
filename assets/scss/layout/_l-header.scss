@@ -1,0 +1,17 @@
+.l-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  z-index: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  @include mq-down(lg) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+  }
+}

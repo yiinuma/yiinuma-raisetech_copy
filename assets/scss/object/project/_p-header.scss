@@ -1,0 +1,179 @@
+.p-header__left {
+  margin-left: 21px;
+  p {
+    margin-bottom: 0;
+  }
+  a {
+    height: 70px;
+    display: flex;
+    color: $color-black;
+    align-items: center;
+  }
+  img {
+    vertical-align: middle;
+    width: 190x;
+  }
+  span {
+    margin-left: 16px;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1.3;
+  }
+  strong {
+    font-size: 1.8rem;
+    font-weight: 900;
+  }
+}
+
+/* チェックボックスを非表示 */
+.p-header__right input {
+  display: none;
+}
+
+#menu-navibtn {
+  display: none;
+  cursor: pointer;
+  // cursor: hand;
+}
+
+.p-header__menu {
+  display: flex;
+  &--parent {
+    color: $color-black;
+    position: relative;
+    list-style: none;
+    // font-weight: 900;
+    white-space: nowrap;
+  }
+}
+
+@include mq-up(lg) {
+  .p-header__menu--parent {
+    > a {
+      background-color: $color-white;
+      display: block;
+      padding: 0 15px 0 15px;
+      line-height: 70px;
+      color: $color-black;
+      overflow: hidden;
+      transition: all 0.3s ease-out;
+    }
+    &:hover > a {
+      background-color: $color-green2;
+      transition: all 0.2s ease-out;
+    }
+    &:hover {
+      .p-header__menu--child li {
+        display: block;
+        transition: all 0.2s ease-out;
+        height: 54px;
+      }
+    }
+  }
+  .p-header__menu--child {
+    top: 70px;
+    position: absolute;
+    li {
+      overflow: hidden;
+      height: 0;
+      a {
+        display: block;
+        color: $color-black;
+        padding: 15px 60px 15px 15px;
+        font-weight: 400;
+        transition: all 0.2s ease-out;
+        background-color: $color-green2;
+      }
+      &:hover > a {
+        color: $color-green3;
+        background-color: $color-white;
+      }
+    }
+  }
+  #attend {
+    color: $color-white;
+    background-color: $color-green4;
+  }
+}
+
+@include mq-down(lg) {
+  .p-header__menu {
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    // /* z-index: 999; */
+    background-color: $color-white;
+    /* max-heightでアニメーションする */
+    max-height: 0;
+    /* 開く時と戻る時で同じぐらいにする */
+    /* max-height:400;を指定しているので戻るときは時間がかかる */
+    transition: max-height 0.2s ease-in-out;
+  }
+  #menu-navibtn:checked ~ * .p-header__menu {
+    /* ハンバーガーメニューがクリックされた時 */
+    max-height: 400px;
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  .p-header__left {
+    margin: 10px;
+    height: 30px;
+    p {
+      display: inline-block;
+      a {
+        height: auto;
+        span {
+          display: none;
+        }
+      }
+      img {
+        height: 30px;
+      }
+    }
+  }
+  .p-header__menu {
+    &--parent {
+      width: 100%;
+      a {
+        background-color: $color-white;
+        display: block;
+        padding: 10px;
+        line-height: 25px;
+        color: $color-black;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover > a {
+        background-color: #f3fafb;
+        transition: all 0.3s ease-out;
+      }
+      &:hover .p-header__menu--child li {
+        display: block;
+        height: 45px;
+        transition: all 0.3s ease-out;
+      }
+    }
+
+    &--child {
+      li {
+        overflow: hidden;
+        height: 0;
+        font-weight: 400;
+        &:hover > a {
+          background-color: #f3fafb;
+          transition: all 0.2s ease-out;
+        }
+        a {
+          padding: 10px 10px 10px 25px;
+        }
+      }
+    }
+  }
+  #attend {
+    display: none;
+  }
+}

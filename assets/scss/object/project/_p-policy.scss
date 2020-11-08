@@ -1,0 +1,75 @@
+.p-PolicyWrapper {
+  max-width: 1078px;
+  margin: 0 auto;
+}
+
+.p-policy {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 11;
+  text-align: center;
+  margin-top: -263px;
+  z-index: 300;
+}
+
+.p-policy__entry {
+  margin: 0 50px;
+  text-align: left;
+  width: 229px;
+}
+
+.p-policy__entry--icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 230px;
+  margin: 0 auto;
+  background-color: $color-white;
+  border: solid 6px $color-black;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.p-policy__entry--title {
+  p {
+    text-align: center;
+    font-size: 24px;
+    // font-weight: 700;
+    line-height: 1.6;
+    color: $color-white;
+    i {
+      font-size: 100px;
+      color: $color-black;
+    }
+  }
+  p:last-child {
+    margin-top: 0.2em;
+  }
+}
+
+.p-policy__entry--text {
+  margin-top: 8px;
+  color: $color-white;
+  text-align: left;
+  justify-content: center;
+  line-height: 1.7;
+  font-size: 16px;
+  // font-weight: 700;
+}
+
+@include mq-down(md) {
+  .p-PolicyWrapper {
+    margin: 0 10px;
+  }
+  .p-policy {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+  .p-policy__entry {
+    margin-bottom: 2.5em;
+    width: auto;
+  }
+}

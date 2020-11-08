@@ -1,0 +1,156 @@
+.dummy {
+  height: 20vh;
+  background-color: burlywood;
+}
+
+.p-footer__nav {
+  margin: 0 auto;
+  margin-bottom: 35.2px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1078px;
+  font-weight: 700;
+  color: $color-white;
+  p {
+    line-height: 1.6;
+    font-size: 1.8rem;
+    margin-bottom: 0.9em;
+  }
+  ul li a {
+    font-size: 1.4rem;
+    color: $color-white;
+  }
+}
+.p-footer__nav--section ul {
+  text-align: left;
+  // padding-left: 0;
+  li {
+    line-height: 1.4;
+    margin-bottom: 7px;
+  }
+  li a:visited {
+    color: $color-white;
+  }
+  li:hover > a {
+    transition: all 0.5s ease;
+    color: $color-green3;
+  }
+}
+
+.p-footer__logo {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 27.2px;
+  max-width: 1078px;
+  align-items: center;
+
+  p {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    color: $color-white;
+  }
+  img {
+    display: block;
+  }
+  span {
+    margin-left: 14px;
+  }
+  p:nth-child(2) {
+    margin-left: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.p-footer__bottom {
+  background-color: $color-white;
+  li {
+    display: inline-block;
+    margin-right: 18px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.p-footer__bottom--link {
+  display: flex;
+  max-width: 1078px;
+  margin: 0 auto;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  text-align: left;
+  align-items: center;
+  ul {
+    margin: 0.6em 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  a:visited {
+    color: $color-gray2;
+  }
+  li:hover > a {
+    transition: all 0.5s ease;
+    color: $color-green3;
+  }
+  p {
+    color: $color-gray1;
+  }
+  small {
+    font-size: 80%;
+  }
+}
+
+@include mq-down(lg) {
+  .p-footer__nav,
+  .p-footer__logo {
+    margin: 0 10px;
+  }
+  .p-footer__nav {
+    margin-bottom: 2.2em;
+  }
+  .p-footer__logo {
+    margin-bottom: 1.7em;
+  }
+  .p-footer__bottom {
+    padding: 0 10px;
+  }
+}
+
+@include mq-down(md) {
+  .p-policy {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+  .p-policy__entry {
+    margin-bottom: 2.5em;
+    width: auto;
+  }
+  .l-footer {
+    padding-top: 1.7rem;
+  }
+  .p-footer__nav {
+    display: none;
+  }
+  .p-footer__logo {
+    flex-direction: column;
+    text-align: center;
+    img {
+      margin: auto;
+    }
+    p:nth-child(2) {
+      margin: 0.9em 0 0;
+    }
+    span {
+      display: block;
+      margin-top: 0.7em;
+      // margin-left: 0;
+    }
+  }
+  .p-footer__bottom--link {
+    display: block;
+    p {
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.l-topwrapper {
+  padding-top: 70px;
+}
+
+@include mq-down(lg) {
+  .l-topwrapper {
+    padding-top: 50px;
+  }
+}

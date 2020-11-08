@@ -1,0 +1,71 @@
+/* -------ハンバーガーここから------- */
+
+#navibtn {
+  display: none;
+}
+@include mq-down(lg) {
+  #navibtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $color-white;
+    transition: 0.2s;
+    width: 50px;
+    height: 50px;
+  }
+  #navibtn span {
+    display: block;
+    width: 50px;
+    height: 50px;
+    transition: 0.2s;
+    span {
+      display: block;
+      overflow: hidden;
+      width: 1px;
+      height: 1px;
+    }
+    span::before,
+    span::after,
+    &::after {
+      position: absolute;
+      left: 14px;
+      content: "";
+      width: 23px;
+      height: 2px;
+      background-color: $color-green4;
+      transition: all 0.3s;
+    }
+  }
+  /* 上の棒 */
+  #navibtn span span::before {
+    top: 15px;
+  }
+  #menu-navibtn:checked ~ label#navibtn {
+    background-color: $color-green4;
+  }
+  #menu-navibtn:checked ~ label#navibtn span span::before {
+    top: 24px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    background-color: $color-white;
+  }
+  /* 下の棒 */
+  #navibtn span::after {
+    bottom: 15px;
+  }
+  #menu-navibtn:checked ~ label#navibtn > span::after {
+    bottom: 24px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    background-color: $color-white;
+  }
+  /* 中の棒 */
+  #navibtn span span::after {
+    top: 24px;
+  }
+  #menu-navibtn:checked ~ label#navibtn span span::after {
+    display: none;
+  }
+}
+/* -------ハンバーガーここまで------- */
